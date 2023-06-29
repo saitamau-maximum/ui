@@ -1,0 +1,30 @@
+{
+  "name": "maximum-ui-root",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev:storybook": "turbo dev:storybook"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "component"
+  ],
+  "author": "sor4chi",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.24",
+    "@storybook/addon-interactions": "^7.0.24",
+    "@storybook/addon-links": "^7.0.24",
+    "@storybook/blocks": "^7.0.24",
+    "@storybook/react": "^7.0.24",
+    "@storybook/react-vite": "^7.0.24",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.24",
+    "turbo": "^1.10.6",
+    "typescript": "^5.1.5"
+  }
+}
