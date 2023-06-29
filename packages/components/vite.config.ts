@@ -1,9 +1,11 @@
-import { resolve } from "path";
-import { defineConfig, PluginOption } from "vite";
-import react from "@vitejs/plugin-react";
-import { visualizer } from "rollup-plugin-visualizer";
-import dts from "vite-plugin-dts";
-import { name } from "./package.json";
+import { resolve } from 'path';
+
+import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig, PluginOption } from 'vite';
+import dts from 'vite-plugin-dts';
+
+import { name } from './package.json';
 
 export default defineConfig(({ mode }) => {
   const plugins: PluginOption = [
@@ -12,24 +14,24 @@ export default defineConfig(({ mode }) => {
       insertTypesEntry: true,
     }),
   ];
-  if (mode === "analyze") {
+  if (mode === 'analyze') {
     plugins.push(visualizer());
   }
 
   return {
     build: {
       lib: {
-        entry: resolve(__dirname, "src/index.ts"),
+        entry: resolve(__dirname, 'src/index.ts'),
         name,
-        formats: ["es", "umd"],
+        formats: ['es', 'umd'],
         fileName: (format) => `${name}.${format}.js`,
       },
       rollupOptions: {
-        external: ["react", "react-dom"],
+        external: ['react', 'react-dom'],
         output: {
           globals: {
-            react: "React",
-            "react-dom": "ReactDOM",
+            react: 'React',
+            'react-dom': 'ReactDOM',
           },
         },
       },
