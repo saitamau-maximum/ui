@@ -4,7 +4,20 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev:storybook": "turbo dev:storybook"
+    "dev:storybook": "turbo dev:storybook",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "format": "prettier --write '**/*.{json,js,jsx,ts,tsx,html,css}'",
+    "format:check": "prettier --check '**/*.{json,js,jsx,ts,tsx,html,css}'",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{json,js,jsx,ts,tsx,html,css}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "keywords": [
     "react",
@@ -22,6 +35,15 @@
     "@storybook/react": "^7.0.24",
     "@storybook/react-vite": "^7.0.24",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.24",
     "turbo": "^1.10.6",
