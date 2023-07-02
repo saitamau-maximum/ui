@@ -1,0 +1,33 @@
+$font-size-xs: 0.75rem !default;
+$font-size-sm: 0.875rem !default;
+$font-size-md: 1rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-xl: 1.25rem !default;
+$font-size-2xl: 1.375rem !default;
+$font-size-3xl: 1.625rem !default;
+$font-size-4xl: 2rem !default;
+$font-size-5xl: 2.625rem !default;
+
+@mixin weak-text {
+  font-weight: 100;
+  line-height: 175%;
+  letter-spacing: 0.04em;
+}
+
+@mixin normal-text {
+  font-weight: 400;
+  line-height: 175%;
+  letter-spacing: 0.04em;
+}
+
+@mixin bold-text {
+  font-weight: 700;
+  line-height: 175%;
+  letter-spacing: 0.04em;
+}
+
+@mixin button-text {
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+}
