@@ -4,8 +4,8 @@
   "type": "module",
   "sideEffects": false,
   "scripts": {
-    "build": "tsc --noEmit && vite build",
-    "build:analyze": "tsc --noEmit && vite build --mode analyze",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "build:analyze": "tsc -p tsconfig.build.json && vite build --mode analyze",
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build"
   },
