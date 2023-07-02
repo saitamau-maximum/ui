@@ -36,6 +36,18 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src'),
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/styles.scss";',
+        },
+      },
+    },
     plugins,
   };
 });
