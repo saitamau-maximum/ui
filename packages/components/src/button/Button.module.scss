@@ -1,0 +1,113 @@
+.button {
+  all: unset;
+
+  border-radius: $spacing-max;
+  display: inline-flex;
+  text-align: center;
+  user-select: none;
+
+  @include button-text;
+
+  font-size: 1em;
+  padding: 0.5em 1em;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:focus-visible:not(:disabled) {
+    outline: 0.125rem solid $color-green-400;
+    outline-offset: 0.125rem;
+  }
+}
+
+.primary {
+  background: $color-accent-gradient;
+  color: $color-gray-50;
+
+  :global(.light) & {
+    box-shadow: $shadow-light;
+  }
+
+  :global(.dark) & {
+    box-shadow: $shadow-dark;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      opacity: 0.85;
+    }
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: $shadow-none;
+  }
+
+  &:disabled {
+    background: $color-gray-400;
+    color: $color-gray-50;
+    box-shadow: $shadow-none;
+  }
+}
+
+.secondary {
+  :global(.light) & {
+    background: $color-gray-50;
+    color: $color-gray-700;
+    box-shadow: $shadow-light;
+  }
+
+  :global(.dark) & {
+    background: $color-gray-700;
+    color: $color-gray-50;
+    box-shadow: $shadow-dark;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      opacity: 0.85;
+    }
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: $shadow-none;
+  }
+
+  &:disabled {
+    background: $color-gray-400;
+    color: $color-gray-50;
+    box-shadow: $shadow-none;
+  }
+}
+
+.tertiary {
+  :global(.light) & {
+    color: $color-gray-500;
+  }
+
+  :global(.dark) & {
+    color: $color-gray-50;
+  }
+
+  @media (hover: hover) {
+    :global(.light) &:hover:not(:disabled) {
+      background: $color-gray-200;
+    }
+
+    :global(.dark) &:hover:not(:disabled) {
+      background: $color-gray-700;
+    }
+  }
+
+  :global(.light) &:active:not(:disabled) {
+    background: $color-gray-200;
+  }
+
+  :global(.dark) &:active:not(:disabled) {
+    background: $color-gray-700;
+  }
+
+  &:disabled {
+    color: $color-gray-400;
+  }
+}
