@@ -3,13 +3,12 @@
 
   border-radius: $spacing-max;
   display: inline-flex;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
   user-select: none;
 
-  @include button-text;
-
   font-size: 1em;
-  padding: 0.5em 1em;
 
   &:not(:disabled) {
     cursor: pointer;
@@ -19,6 +18,17 @@
     outline: 0.125rem solid $color-green-400;
     outline-offset: 0.125rem;
   }
+}
+
+.withText {
+  @include button-text;
+  padding: 0.5em 1em;
+}
+
+.iconOnly {
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
 }
 
 .primary {
