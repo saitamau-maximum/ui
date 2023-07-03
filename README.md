@@ -14,14 +14,16 @@ FontをHeadで読み込んでください、推奨は`Noto Sans JP`です。
 </head>
 ```
 
-`body`タグに`.light`または`.dark`を追加することで、テーマを切り替えることができます。
+`.light`または`.dark`を追加することで、テーマを切り替えることができます。
+切り替えたい一番上の要素に追加してください。
+`fouc`を防ぐために、`<body>`がレンダリングされる前の｀<html>`に追加することを推奨します。
 
 ```html
-<body class="light">
+<html class="light">
     <!-- ライトモードの場合 -->
-</body>
+</html>
 
-<body class="dark">
+<html class="dark">
     <!-- ダークモードの場合 -->
-</body>
+</html>
 ```
