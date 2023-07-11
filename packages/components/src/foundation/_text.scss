@@ -10,24 +10,24 @@ $font-size-5xl: 2.625rem !default;
 
 @mixin weak-text {
   font-weight: 100;
-  line-height: 150%;
+  line-height: 175%;
   letter-spacing: 0.04em;
 }
 
 @mixin normal-text {
   font-weight: 400;
-  line-height: 150%;
+  line-height: 175%;
   letter-spacing: 0.04em;
 }
 
 @mixin bold-text {
   font-weight: 700;
-  line-height: 150%;
+  line-height: 175%;
   letter-spacing: 0.04em;
 }
 
 @mixin button-text {
   font-weight: 700;
-  line-height: 175%;
+  line-height: 150%;
   letter-spacing: 0.04em;
 }
