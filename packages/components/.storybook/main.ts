@@ -14,6 +14,9 @@ const config = {
   docs: {
     autodocs: 'tag',
   },
+  core: {
+    builder: '@storybook/builder-vite',
+  },
 } satisfies StorybookConfig;
 
 export default config;

@@ -14,8 +14,10 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@storybook/builder-vite": "^7.0.26",
     "@types/react": "^18.2.14",
     "@vitejs/plugin-react": "^4.0.1",
+    "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.63.6",
