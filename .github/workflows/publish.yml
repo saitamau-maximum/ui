@@ -47,6 +47,9 @@ jobs:
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
     permissions:
       contents: read
       packages: write
