@@ -71,12 +71,12 @@ importers:
 
   examples/react-vite:
     dependencies:
+      '@saitamau-maximum/ui':
+        specifier: workspace:*
+        version: link:../../packages/components
       '@types/react-dom':
         specifier: ^18.2.6
         version: 18.2.6
-      maximum-ui:
-        specifier: workspace:*
-        version: link:../../packages/components
       react:
         specifier: ^18.2.0
         version: 18.2.0

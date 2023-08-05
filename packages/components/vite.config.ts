@@ -5,8 +5,6 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig, PluginOption } from 'vite';
 import dts from 'vite-plugin-dts';
 
-import { name } from './package.json';
-
 export default defineConfig(({ mode }) => {
   const plugins: PluginOption = [
     react(),
@@ -22,9 +20,9 @@ export default defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: resolve(__dirname, 'src/index.ts'),
-        name,
+        name: 'maximum-ui',
         formats: ['es', 'umd'],
-        fileName: (format) => `${name}.${format}.js`,
+        fileName: (format) => `maximum-ui.${format}.js`,
       },
       rollupOptions: {
         external: ['react', 'react-dom'],

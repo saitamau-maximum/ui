@@ -1,4 +1,4 @@
-import { Button } from 'maximum-ui';
+import { Button } from '@saitamau-maximum/ui';
 import { Sun, Moon } from 'react-feather';
 
 const judgeTheme = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'maximum-ui/style.css';
+import '@saitamau-maximum/ui/style.css';
 import './global.css';
 
 import App from './App';

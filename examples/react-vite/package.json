@@ -1,5 +1,5 @@
 {
-  "name": "maximum-ui-react-vite-example",
+  "name": "@saitamau-maximum/ui-react-vite-example",
   "version": "0.0.0",
   "type": "module",
   "sideEffects": false,
@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/react-dom": "^18.2.6",
-    "maximum-ui": "workspace:*",
+    "@saitamau-maximum/ui": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10"
