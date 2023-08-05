@@ -49,3 +49,30 @@ const Cards = (args: Story['args']) => (
 
 export const Default = (args: Story['args']) => <Cards {...args} />;
 export const Fit = (args: Story['args']) => <Cards {...args} fit />;
+export const Sm = () => (
+  <HStack>
+    <VStack theme="light">
+      <Card size="sm" fit>
+        This is a card.
+      </Card>
+    </VStack>
+  </HStack>
+);
+export const Md = () => (
+  <HStack>
+    <VStack theme="light">
+      <Card size="md" fit>
+        This is a card.
+      </Card>
+    </VStack>
+  </HStack>
+);
+export const Lg = () => (
+  <HStack>
+    <VStack theme="light">
+      <Card size="lg" fit>
+        This is a card.
+      </Card>
+    </VStack>
+  </HStack>
+);
