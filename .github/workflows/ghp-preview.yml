@@ -40,6 +40,10 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile --prefer-offline
 
+      - name: Create dist dir for vite
+        run: mkdir dist
+        working-directory: packages/components
+
       - name: Build
         run: pnpm build:storybook
         working-directory: packages/components
