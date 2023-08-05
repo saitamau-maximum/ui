@@ -27,3 +27,9 @@ FontをHeadで読み込んでください、推奨は`Noto Sans JP`です。
     <!-- ダークモードの場合 -->
 </html>
 ```
+
+Package のインストールをするには、 `~/.npmrc` に以下を追加してください。
+
+```npmrc
+@saitamau-maximum:registry=https://npm.pkg.github.com
+```
