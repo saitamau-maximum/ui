@@ -4,8 +4,9 @@
 name: Publish Node.js Package
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -34,8 +35,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --prefer-offline
 
-      - name: Test
-        run: pnpm format:check && pnpm lint && pnpm build
+      - name: Format Test
+        run: pnpm format:check
+
+      - name: Lint Test
+        run: pnpm lint
+
+      - name: Build Test
+        run: pnpm build
 
   publish-gpr:
     needs: build
