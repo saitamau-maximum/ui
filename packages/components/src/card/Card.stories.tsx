@@ -24,27 +24,28 @@ const Cards = (args: Story['args']) => (
   <HStack>
     <VStack theme="light">
       <Card size="lg" {...args}>
-        <Button variant="primary">Large</Button>
+        <Button variant="primary">Button</Button>
       </Card>
       <Card size="md" {...args}>
-        <Button variant="primary">Medium</Button>
+        <Button variant="primary">Button</Button>
       </Card>
       <Card size="sm" {...args}>
-        <Button variant="primary">Small</Button>
+        <Button variant="primary">Button</Button>
       </Card>
     </VStack>
     <VStack theme="dark">
       <Card size="lg" {...args}>
-        <Button variant="primary">Large</Button>
+        <Button variant="primary">Button</Button>
       </Card>
       <Card size="md" {...args}>
-        <Button variant="primary">Medium</Button>
+        <Button variant="primary">Button</Button>
       </Card>
       <Card size="sm" {...args}>
-        <Button variant="primary">Small</Button>
+        <Button variant="primary">Button</Button>
       </Card>
     </VStack>
   </HStack>
 );
 
 export const Default = (args: Story['args']) => <Cards {...args} />;
+export const Fit = (args: Story['args']) => <Cards {...args} fit />;

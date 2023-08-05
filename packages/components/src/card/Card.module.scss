@@ -16,6 +16,10 @@
   &__lg {
     padding: $spacing-2xl;
   }
+
+  &__fit {
+    width: fit-content !important;
+  }
 }
 
 :global(.light) .card {

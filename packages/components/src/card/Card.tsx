@@ -7,6 +7,7 @@ import type { ReactNode } from 'react';
 interface CardProps {
   children?: ReactNode;
   size?: 'sm' | 'md' | 'lg';
+  fit?: boolean;
 }
 
 const SIZE_CLASS = {
@@ -15,6 +16,12 @@ const SIZE_CLASS = {
   lg: styles.card__lg,
 };
 
-export const Card = ({ children, size = 'md' }: CardProps) => {
-  return <div className={clsx(styles.card, SIZE_CLASS[size])}>{children}</div>;
+export const Card = ({ children, size = 'md', fit = false }: CardProps) => {
+  return (
+    <div
+      className={clsx(styles.card, SIZE_CLASS[size], fit && styles.card__fit)}
+    >
+      {children}
+    </div>
+  );
 };
