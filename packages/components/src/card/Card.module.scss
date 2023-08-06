@@ -1,0 +1,33 @@
+.card {
+  all: unset;
+
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: $spacing-sm;
+
+  &__sm {
+    padding: $spacing-md;
+  }
+
+  &__md {
+    padding: $spacing-lg;
+  }
+
+  &__lg {
+    padding: $spacing-2xl;
+  }
+
+  &__fit {
+    width: fit-content !important;
+  }
+}
+
+:global(.light) .card {
+  background: $color-gray-50;
+  box-shadow: $shadow-light;
+}
+
+:global(.dark) .card {
+  background: $color-gray-700;
+  box-shadow: $shadow-dark;
+}
