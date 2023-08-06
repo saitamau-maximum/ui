@@ -4,9 +4,8 @@
 name: Publish Node.js Package
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -78,7 +77,7 @@ jobs:
         run: pnpm build
 
       - name: Publish to GitHub Packages
-        run: pnpm publish
+        run: pnpm publish --no-git-checks
         working-directory: packages/components
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
