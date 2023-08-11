@@ -4,6 +4,7 @@
   width: 100%;
   box-sizing: border-box;
   border-radius: $spacing-sm;
+  display: block;
 
   &__sm {
     padding: $spacing-md;
