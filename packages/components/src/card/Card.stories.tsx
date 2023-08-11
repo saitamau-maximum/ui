@@ -8,12 +8,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  argTypes: {
-    size: {
-      control: { type: 'select' },
-      options: ['sm', 'md', 'lg'],
-    },
-  },
 };
 
 export default meta;

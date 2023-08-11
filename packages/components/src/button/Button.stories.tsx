@@ -9,14 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary', 'tertiary'],
-    },
-    disabled: { control: { type: 'boolean' } },
-    onClick: { action: 'clicked' },
-  },
 };
 
 export default meta;
