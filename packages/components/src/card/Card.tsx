@@ -8,6 +8,7 @@ interface CardProps {
   children?: ReactNode;
   size?: 'sm' | 'md' | 'lg';
   fit?: boolean;
+  className?: string;
 }
 
 const SIZE_CLASS = {
@@ -16,10 +17,20 @@ const SIZE_CLASS = {
   lg: styles.card__lg,
 };
 
-export const Card = ({ children, size = 'md', fit = false }: CardProps) => {
+export const Card = ({
+  children,
+  size = 'md',
+  fit = false,
+  className,
+}: CardProps) => {
   return (
     <div
-      className={clsx(styles.card, SIZE_CLASS[size], fit && styles.card__fit)}
+      className={clsx(
+        styles.card,
+        SIZE_CLASS[size],
+        fit && styles.card__fit,
+        className,
+      )}
     >
       {children}
     </div>
