@@ -1,0 +1,82 @@
+$timeline-vertical-gap: 2rem;
+$timeline-item-point-size: 0.5rem;
+$timeline-item-point-margin: 0.75rem;
+
+.TimelineContainer {
+  border-spacing: 0 $timeline-vertical-gap;
+}
+
+.TimelineItemLeft {
+  padding: 0;
+  vertical-align: top;
+}
+
+.TimelineItemLabel {
+  line-height: 2rem;
+  white-space: nowrap;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+
+  :global(.light) & {
+    color: $color-gray-500;
+  }
+
+  :global(.dark) & {
+    color: $color-gray-400;
+  }
+}
+
+.TimelineItemLabelActive {
+  font-weight: 700;
+
+  :global(.light) & {
+    color: $color-gray-900;
+  }
+
+  :global(.dark) & {
+    color: $color-gray-50;
+  }
+}
+
+.TimelineItemCenter {
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+}
+
+.TimelineItemPoint {
+  position: relative;
+  z-index: 1;
+  width: $timeline-item-point-size;
+  height: $timeline-item-point-size;
+  margin: $timeline-item-point-margin;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+  background-color: $color-gray-400;
+}
+
+.TimelineItemPointActive {
+  background-color: $color-green-500;
+}
+
+tr + tr .TimelineItemCenter .TimelineItemLine {
+  z-index: 0;
+  width: 0.125rem;
+  height: calc(100% + $timeline-vertical-gap - $timeline-item-point-size * 2);
+  position: absolute;
+  bottom: calc(
+    100% + ($timeline-item-point-size / 2) - $timeline-item-point-margin
+  );
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.2s ease-in-out;
+
+  :global(.light) & {
+    background-color: $color-gray-300;
+  }
+
+  :global(.dark) & {
+    background-color: $color-gray-600;
+  }
+}
