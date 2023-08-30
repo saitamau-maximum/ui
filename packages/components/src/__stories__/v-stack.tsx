@@ -15,8 +15,12 @@ export const VStack = ({ children, theme }: VStackProps) => (
       padding: 16,
       alignItems: 'flex-start',
       backgroundColor: (() => {
-        if (theme === 'light') return '#f3f4f6';
-        if (theme === 'dark') return '#1f2937';
+        if (theme === 'light') return 'var(--color-gray-100)';
+        if (theme === 'dark') return 'var(--color-gray-800)';
+      })(),
+      color: (() => {
+        if (theme === 'light') return 'var(--color-gray-900)';
+        if (theme === 'dark') return 'var(--color-gray-50)';
       })(),
     }}
   >

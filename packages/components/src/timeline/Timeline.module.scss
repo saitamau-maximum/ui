@@ -6,6 +6,10 @@ $timeline-item-point-margin: 0.75rem;
   border-spacing: 0 $timeline-vertical-gap;
 }
 
+.TimelineContainerExpand {
+  width: 100%;
+}
+
 .TimelineItemLeft {
   padding: 0;
   vertical-align: top;
@@ -16,7 +20,7 @@ $timeline-item-point-margin: 0.75rem;
   white-space: nowrap;
   display: inline-block;
   width: 100%;
-  text-align: center;
+  text-align: right;
 
   :global(.light) & {
     color: $color-gray-500;
@@ -43,6 +47,7 @@ $timeline-item-point-margin: 0.75rem;
   padding: 0;
   vertical-align: top;
   position: relative;
+  width: $timeline-item-point-size + $timeline-item-point-margin * 2;
 }
 
 .TimelineItemPoint {
@@ -79,4 +84,8 @@ tr + tr .TimelineItemCenter .TimelineItemLine {
   :global(.dark) & {
     background-color: $color-gray-600;
   }
+}
+
+.TimelineItemRightExpand {
+  width: 100%;
 }

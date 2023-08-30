@@ -1,3 +1,4 @@
+import { Container } from '../__stories__/containter';
 import { HStack } from '../__stories__/h-stack';
 import { VStack } from '../__stories__/v-stack';
 
@@ -46,4 +47,41 @@ export const Default = () => (
       </Timeline.Container>
     </VStack>
   </HStack>
+);
+
+export const Expand = () => (
+  <>
+    <Container theme="light">
+      <Timeline.Container expand>
+        <Timeline.Item label="2021-01-01">
+          競プロのコンテスト○○を開催しました
+        </Timeline.Item>
+        <Timeline.Item label="2021-01-02" active>
+          ××に参加し、3位入賞を果たしました
+        </Timeline.Item>
+        <Timeline.Item label="2021-01-03">
+          △△をこちらにて公開しました
+        </Timeline.Item>
+        <Timeline.Item label="2021-01-04" active>
+          ◻︎◻︎を新たにリニューアルしました
+        </Timeline.Item>
+      </Timeline.Container>
+    </Container>
+    <Container theme="dark">
+      <Timeline.Container expand>
+        <Timeline.Item label="2021-01-01" active>
+          競プロのコンテスト○○を開催しました
+        </Timeline.Item>
+        <Timeline.Item label="2021-01-02">
+          ××に参加し、3位入賞を果たしました
+        </Timeline.Item>
+        <Timeline.Item label="2021-01-03" active>
+          △△をこちらにて公開しました
+        </Timeline.Item>
+        <Timeline.Item label="2021-01-04">
+          ◻︎◻︎を新たにリニューアルしました
+        </Timeline.Item>
+      </Timeline.Container>
+    </Container>
+  </>
 );
