@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import { ReactNode, createContext, useContext } from 'react';
 
 import { Card } from '../card';
 
@@ -7,10 +7,24 @@ import styles from './Timeline.module.scss';
 
 interface ContainerProps {
   children?: ReactNode;
+  expand?: boolean;
 }
 
-const Container = ({ children }: ContainerProps) => {
-  return <table className={styles.TimelineContainer}>{children}</table>;
+const isExpandContext = createContext(false);
+
+const Container = ({ children, expand }: ContainerProps) => {
+  return (
+    <isExpandContext.Provider value={!!expand}>
+      <table
+        className={clsx(
+          styles.TimelineContainer,
+          expand && styles.TimelineContainerExpand,
+        )}
+      >
+        {children}
+      </table>
+    </isExpandContext.Provider>
+  );
 };
 
 interface ItemProps {
@@ -21,6 +35,8 @@ interface ItemProps {
 }
 
 const Item = ({ children, label, active }: ItemProps) => {
+  const expand = useContext(isExpandContext);
+
   return (
     <tr className={styles.TimelineItem}>
       <td className={styles.TimelineItemLeft}>
@@ -42,10 +58,8 @@ const Item = ({ children, label, active }: ItemProps) => {
         />
         <div className={styles.TimelineItemLine}></div>
       </td>
-      <td>
-        <Card className={styles.TimelineItemRight} size="sm">
-          {children}
-        </Card>
+      <td className={clsx(expand && styles.TimelineItemRightExpand)}>
+        <Card size="sm">{children}</Card>
       </td>
     </tr>
   );
