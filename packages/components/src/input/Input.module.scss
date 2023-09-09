@@ -1,0 +1,42 @@
+.input {
+  box-sizing: border-box;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &::placeholder {
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out;
+
+    :global(.light) & {
+      color: $color-gray-400;
+    }
+
+    :global(.dark) & {
+      color: $color-gray-500;
+    }
+  }
+}
+
+.expanded {
+  width: 100%;
+}
+
+:global(.light) .input {
+  background: $color-gray-50;
+  border: 1px solid $color-gray-200;
+  color: inherit;
+}
+
+:global(.dark) .input {
+  background: $color-gray-700;
+  border: 1px solid $color-gray-600;
+  color: inherit;
+}
