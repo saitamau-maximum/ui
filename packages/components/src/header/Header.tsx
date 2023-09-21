@@ -45,17 +45,17 @@ export const Header = ({
   const internalNavigations = navigations.filter((nav) => !nav.external);
 
   return (
-    <header className={clsx(styles.header, sticky && styles.headerSticky)}>
+    <header
+      className={clsx(
+        variant === 'sm' ? styles.sm : styles.notSm,
+        styles.header,
+        sticky && styles.headerSticky,
+      )}
+    >
       <div className={styles.headerInner}>
         <nav className={styles.nav}>
           <Link to="/" href="/" className={styles.logoLink}>
-            <img
-              className={styles.logo}
-              src={logo}
-              alt="Maximum Logo"
-              width={172}
-              height={64}
-            />
+            <img className={styles.logo} src={logo} alt="Maximum Logo" />
           </Link>
           {['lg', 'md'].includes(variant) && (
             <ul className={styles.navList}>
