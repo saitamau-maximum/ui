@@ -30,6 +30,7 @@ export interface HeaderProps {
   children?: React.ReactNode;
   link?: LinkComponent;
   variant: 'lg' | 'md' | 'sm';
+  sticky?: boolean;
 }
 
 export const Header = ({
@@ -37,13 +38,14 @@ export const Header = ({
   children,
   link,
   variant,
+  sticky,
 }: HeaderProps) => {
   const Link = link ?? 'a';
   const externalNavigations = navigations.filter((nav) => nav.external);
   const internalNavigations = navigations.filter((nav) => !nav.external);
 
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header, sticky && styles.headerSticky)}>
       <div className={styles.headerInner}>
         <nav className={styles.nav}>
           <Link to="/" href="/" className={styles.logoLink}>

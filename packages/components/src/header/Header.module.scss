@@ -2,9 +2,15 @@
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
-  z-index: 1;
   height: 6rem;
   transition: border 0.2s ease-in-out;
+  position: sticky;
+}
+
+.headerSticky {
+  z-index: $z-index-header;
+  top: 0;
+  left: 0;
 }
 
 .headerInner {
