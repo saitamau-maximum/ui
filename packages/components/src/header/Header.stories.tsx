@@ -1,6 +1,6 @@
 import { Menu, User } from 'react-feather';
 
-import { Container } from '../__stories__/containter';
+import { HStack } from '../__stories__/h-stack';
 import { VStack } from '../__stories__/v-stack';
 import { Button } from '../button';
 
@@ -14,18 +14,31 @@ const meta: Meta<typeof Header> = {
 
 export default meta;
 
-const Headers = (args: HeaderProps) => (
-  <Container>
-    <VStack theme="light" noPadding>
-      <Header {...args} />
-      <div style={{ height: '50vh' }} />
+const LargeHeaders = (args: HeaderProps) => {
+  return (
+    <VStack align="stretch">
+      <VStack theme="light" noPadding height="50vh">
+        <Header {...args} />
+      </VStack>
+      <VStack theme="dark" noPadding height="50vh">
+        <Header {...args} />
+      </VStack>
     </VStack>
-    <VStack theme="dark" noPadding>
-      <Header {...args} />
-      <div style={{ height: '50vh' }} />
-    </VStack>
-  </Container>
-);
+  );
+};
+
+const SmallHeaders = (args: HeaderProps) => {
+  return (
+    <HStack align="stretch">
+      <VStack theme="light" noPadding height="80vh" width="390px">
+        <Header {...args} />
+      </VStack>
+      <VStack theme="dark" noPadding height="80vh" width="390px">
+        <Header {...args} />
+      </VStack>
+    </HStack>
+  );
+};
 
 const NAVIGATIONS = [
   {
@@ -68,21 +81,28 @@ const NAVIGATIONS = [
   },
 ];
 
-export const Default = () => (
-  <Headers navigations={NAVIGATIONS} variant="lg">
+export const VariantLg = () => (
+  <LargeHeaders navigations={NAVIGATIONS} variant="lg">
     <Button leftIcon={<User />} variant="tertiary" />
-  </Headers>
+  </LargeHeaders>
 );
 
-export const HideExternal = () => (
-  <Headers navigations={NAVIGATIONS} variant="md">
+export const VariantMd = () => (
+  <LargeHeaders navigations={NAVIGATIONS} variant="md">
     <Button leftIcon={<User />} variant="tertiary" />
-  </Headers>
+  </LargeHeaders>
 );
 
-export const WithHamburger = () => (
-  <Headers navigations={NAVIGATIONS} variant="sm">
+export const VariantSm = () => (
+  <SmallHeaders navigations={NAVIGATIONS} variant="sm">
     <Button leftIcon={<User />} variant="tertiary" />
     <Button leftIcon={<Menu />} variant="tertiary" />
-  </Headers>
+  </SmallHeaders>
+);
+
+export const Sticky = () => (
+  <SmallHeaders navigations={NAVIGATIONS} variant="sm" sticky>
+    <Button leftIcon={<User />} variant="tertiary" />
+    <Button leftIcon={<Menu />} variant="tertiary" />
+  </SmallHeaders>
 );
