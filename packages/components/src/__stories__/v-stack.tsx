@@ -35,6 +35,8 @@ export const VStack = ({
       })(),
       width,
       height,
+      overflow: 'hidden',
+      position: 'relative',
     }}
   >
     {children}

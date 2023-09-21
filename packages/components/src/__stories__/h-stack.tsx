@@ -35,6 +35,8 @@ export const HStack = ({
       })(),
       width,
       height,
+      overflow: 'hidden',
+      position: 'relative',
     }}
   >
     {children}
