@@ -3,16 +3,17 @@ import { ReactNode } from 'react';
 interface VStackProps {
   children: ReactNode;
   theme?: 'light' | 'dark';
+  noPadding?: boolean;
 }
 
-export const VStack = ({ children, theme }: VStackProps) => (
+export const VStack = ({ children, theme, noPadding }: VStackProps) => (
   <div
     className={theme}
     style={{
       display: 'flex',
       flexDirection: 'column',
       gap: 16,
-      padding: 16,
+      padding: noPadding ? 0 : 16,
       alignItems: 'flex-start',
       backgroundColor: (() => {
         if (theme === 'light') return 'var(--color-gray-100)';

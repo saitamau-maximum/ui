@@ -16,11 +16,11 @@ export default meta;
 
 const Headers = (args: HeaderProps) => (
   <Container>
-    <VStack theme="light">
+    <VStack theme="light" noPadding>
       <Header {...args} />
       <div style={{ height: '50vh' }} />
     </VStack>
-    <VStack theme="dark">
+    <VStack theme="dark" noPadding>
       <Header {...args} />
       <div style={{ height: '50vh' }} />
     </VStack>
