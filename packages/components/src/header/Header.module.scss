@@ -31,6 +31,8 @@
 }
 
 .logoLink {
+  line-height: 0;
+
   &:focus-visible {
     border-radius: 0.5rem;
   }
