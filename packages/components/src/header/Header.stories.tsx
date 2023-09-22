@@ -106,3 +106,10 @@ export const Sticky = () => (
     <Button leftIcon={<Menu />} variant="tertiary" />
   </SmallHeaders>
 );
+
+export const DropdownOpen = () => (
+  <SmallHeaders navigations={NAVIGATIONS} variant="sm" dropdownOpen>
+    <Button leftIcon={<User />} variant="tertiary" />
+    <Button leftIcon={<Menu />} variant="tertiary" />
+  </SmallHeaders>
+);
