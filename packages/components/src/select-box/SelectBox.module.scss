@@ -1,0 +1,136 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-style: solid;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+
+  :global(.light) & {
+    border-color: $color-gray-200;
+    background-color: $color-gray-100;
+    color: $color-gray-900;
+
+    &:hover {
+      border-color: $color-gray-400;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline-offset: -2px;
+      border-color: $color-green-400;
+    }
+
+    &[data-placeholder] {
+      color: $color-gray-500;
+    }
+  }
+
+  :global(.dark) & {
+    border-color: $color-gray-700;
+    background-color: $color-gray-800;
+    color: $color-gray-50;
+
+    &:hover {
+      border-color: $color-gray-500;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline-offset: -2px;
+      border-color: $color-green-500;
+    }
+
+    &[data-placeholder] {
+      color: $color-gray-400;
+    }
+  }
+
+  &.expanded {
+    width: 100%;
+  }
+}
+
+.icon {
+  transition: transform 0.3s ease-in-out;
+  line-height: 0;
+
+  .trigger[data-state='open'] & {
+    transform: rotate(-180deg);
+  }
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease-in-out;
+
+  :global(.light) &,
+  &:global(.light) {
+    background-color: $color-gray-200;
+    box-shadow: $shadow-light;
+  }
+
+  :global(.dark) &,
+  &:global(.dark) {
+    background-color: $color-gray-700;
+    box-shadow: $shadow-dark;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+
+  :global(.light) & {
+    color: $color-gray-900;
+
+    &:hover {
+      outline: none;
+      background-color: $color-gray-100;
+    }
+
+    &:focus-visible {
+      outline-offset: -2px;
+      background-color: $color-gray-100;
+    }
+  }
+
+  :global(.dark) & {
+    color: $color-gray-50;
+
+    &:hover {
+      outline: none;
+      background-color: $color-gray-800;
+    }
+
+    &:focus-visible {
+      outline-offset: -2px;
+      background-color: $color-gray-800;
+    }
+  }
+}
