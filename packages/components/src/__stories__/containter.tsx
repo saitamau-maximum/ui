@@ -18,6 +18,8 @@ export const Container = ({ children, theme }: HStackProps) => (
         if (theme === 'light') return 'var(--color-gray-900)';
         if (theme === 'dark') return 'var(--color-gray-50)';
       })(),
+      overflow: 'hidden',
+      position: 'relative',
     }}
   >
     {children}
