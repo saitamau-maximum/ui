@@ -28,6 +28,33 @@ const DUMMY_OPTIONS = [
   { label: 'Option Option Option 3', value: 'option-3' },
 ];
 
-export const Default = () => <SelectBoxes options={DUMMY_OPTIONS} />;
+const DUMMY_GROUPED_OPTIONS = [
+  {
+    label: 'Group 1',
+    options: [
+      { label: 'Option 1', value: 'option-1' },
+      { label: 'Option Option 2', value: 'option-2' },
+      { label: 'Option Option Option 3', value: 'option-3' },
+    ],
+  },
+  {
+    label: 'Group 2',
+    options: [
+      { label: 'Option 4', value: 'option-4' },
+      { label: 'Option Option 5', value: 'option-5' },
+      { label: 'Option Option Option 6', value: 'option-6' },
+    ],
+  },
+];
+
+export const Simple = () => <SelectBoxes options={DUMMY_OPTIONS} />;
+
+export const Grouped = () => (
+  <SelectBoxes groupedOptions={DUMMY_GROUPED_OPTIONS} />
+);
+
+export const Placeholder = () => (
+  <SelectBoxes options={DUMMY_OPTIONS} placeholder="Select an option" />
+);
 
 export const Expanded = () => <SelectBoxes expanded options={DUMMY_OPTIONS} />;
