@@ -100,7 +100,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   box-sizing: border-box;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease-in-out;
@@ -136,15 +136,15 @@
 }
 
 .groupLabel {
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 
   :global(.light) & {
-    color: $color-gray-600;
+    color: $color-gray-500;
   }
 
   :global(.dark) & {
-    color: $color-gray-300;
+    color: $color-gray-400;
   }
 }
 
