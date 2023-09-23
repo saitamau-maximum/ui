@@ -19,6 +19,8 @@ export type Props = {
   placeholder?: string;
   /** don't use this prop, it's for storybook only */
   _theme?: 'light' | 'dark';
+  value?: string;
+  onValueChange?: (value: string) => void;
 } & (
   | {
       options: SingleGroupOptions;
@@ -65,10 +67,12 @@ export const SelectBox = ({
   options,
   groupedOptions,
   placeholder = 'Select an option',
+  value,
+  onValueChange,
   _theme,
 }: Props) => {
   return (
-    <Select.Root>
+    <Select.Root value={value} onValueChange={onValueChange}>
       <Select.Trigger
         className={clsx(styles.trigger, expanded && styles.expanded)}
       >
