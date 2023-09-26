@@ -107,33 +107,37 @@ export const Header = ({
         {dropdownOpen && (
           <div className={styles.dropdown}>
             <div className={styles.dropdownLinks}>
-              <ul className={styles.dropdownLinksItem}>
-                {internalNavigations.map((nav) => (
-                  <li key={nav.href} className={styles.dropdownLink}>
-                    <Link
-                      to={nav.href}
-                      href={nav.href}
-                      className={styles.dropdownLinkText}
-                    >
-                      {nav.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <ul className={styles.dropdownLinksItem}>
-                {externalNavigations.map((nav) => (
-                  <li key={nav.href} className={styles.dropdownLink}>
-                    <Link
-                      to={nav.href}
-                      href={nav.href}
-                      className={styles.dropdownLinkText}
-                    >
-                      {nav.name}
-                      <ArrowUpRight size={16} strokeWidth={2} />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {internalNavigations.length > 0 && (
+                <ul className={styles.dropdownLinksItem}>
+                  {internalNavigations.map((nav) => (
+                    <li key={nav.href} className={styles.dropdownLink}>
+                      <Link
+                        to={nav.href}
+                        href={nav.href}
+                        className={styles.dropdownLinkText}
+                      >
+                        {nav.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {externalNavigations.length > 0 && (
+                <ul className={styles.dropdownLinksItem}>
+                  {externalNavigations.map((nav) => (
+                    <li key={nav.href} className={styles.dropdownLink}>
+                      <Link
+                        to={nav.href}
+                        href={nav.href}
+                        className={styles.dropdownLinkText}
+                      >
+                        {nav.name}
+                        <ArrowUpRight size={16} strokeWidth={2} />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <div className={styles.dropdownDivider} />
             <div className={styles.dropdownActions}>

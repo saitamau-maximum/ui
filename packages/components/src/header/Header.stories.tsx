@@ -100,13 +100,6 @@ export const VariantSm = () => (
   </SmallHeaders>
 );
 
-export const Sticky = () => (
-  <SmallHeaders navigations={NAVIGATIONS} variant="sm" sticky>
-    <Button leftIcon={<User />} variant="tertiary" />
-    <Button leftIcon={<Menu />} variant="tertiary" />
-  </SmallHeaders>
-);
-
 export const DropdownOpen = () => (
   <SmallHeaders navigations={NAVIGATIONS} variant="sm" dropdownOpen>
     <Button leftIcon={<User />} variant="tertiary" />
