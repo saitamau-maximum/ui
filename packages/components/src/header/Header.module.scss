@@ -8,8 +8,8 @@
   );
 }
 
-.sm {
-  --header-inner-vertical-padding: 0;
+.sm :root:has(.sm) {
+  --header-inner-vertical-padding: 0rem;
   --header-side-padding: 1rem;
   --header-logo-height: 3rem;
   --header-action-area-gap: 0.5rem;
