@@ -32,7 +32,6 @@ export interface HeaderProps {
   children?: React.ReactNode;
   link?: LinkComponent;
   variant: 'lg' | 'md' | 'sm';
-  sticky?: boolean;
   dropdownOpen?: boolean;
   dropdownChildren?: React.ReactNode;
   onClose?: () => void;
@@ -43,7 +42,6 @@ export const Header = ({
   children,
   link,
   variant,
-  sticky,
   dropdownOpen,
   dropdownChildren,
   onClose,
@@ -58,7 +56,6 @@ export const Header = ({
         className={clsx(
           variant === 'sm' ? styles.sm : styles.notSm,
           styles.header,
-          sticky && styles.headerSticky,
           dropdownOpen && styles.open,
         )}
       >

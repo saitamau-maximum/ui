@@ -3,6 +3,9 @@
   --header-side-padding: 2rem;
   --header-logo-height: 4rem;
   --header-action-area-gap: 1rem;
+  --header-height: calc(
+    var(--header-inner-vertical-padding) * 2 + var(--header-logo-height) + 1px
+  );
 }
 
 .sm {
@@ -18,6 +21,9 @@
   box-sizing: border-box;
   transition: border 0.2s ease-in-out;
   z-index: $z-index-header;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   :global(.light) & {
     background: $color-gray-100;
@@ -38,12 +44,6 @@
   }
 
   border-radius: 0 0 1.5rem 1.5rem;
-}
-
-.headerSticky {
-  position: sticky;
-  top: 0;
-  left: 0;
 }
 
 .headerInner {
@@ -232,8 +232,9 @@ $nav-text-padding-x: 1rem;
 }
 
 .dropdownBackdrop {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: $z-index-header - 1;
