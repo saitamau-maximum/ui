@@ -83,7 +83,11 @@ export const SelectBox = ({
       </Select.Trigger>
 
       <Select.Portal>
-        <Select.Content className={clsx(_theme, styles.content)}>
+        <Select.Content
+          className={clsx(_theme, styles.content)}
+          position="popper"
+          sideOffset={8}
+        >
           <Select.ScrollUpButton className={styles.scrollButton}>
             <ChevronUp />
           </Select.ScrollUpButton>
