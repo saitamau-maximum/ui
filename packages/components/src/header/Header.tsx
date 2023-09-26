@@ -31,20 +31,18 @@ export interface HeaderProps {
   navigations: NavigationItem[];
   children?: React.ReactNode;
   link?: LinkComponent;
-  variant: 'lg' | 'md' | 'sm';
   dropdownOpen?: boolean;
   dropdownChildren?: React.ReactNode;
-  onClose?: () => void;
+  onDropdownClose?: () => void;
 }
 
 export const Header = ({
   navigations,
   children,
   link,
-  variant,
   dropdownOpen,
   dropdownChildren,
-  onClose,
+  onDropdownClose,
 }: HeaderProps) => {
   const Link = link ?? 'a';
   const externalNavigations = navigations.filter((nav) => nav.external);
@@ -52,55 +50,36 @@ export const Header = ({
 
   return (
     <>
-      <header
-        className={clsx(
-          variant === 'sm' ? styles.sm : styles.notSm,
-          styles.header,
-          dropdownOpen && styles.open,
-        )}
-      >
+      <header className={clsx(styles.header, dropdownOpen && styles.open)}>
         <div className={styles.headerInner}>
           <nav className={styles.nav}>
             <Link to="/" href="/" className={styles.logoLink}>
               <img className={styles.logo} src={logo} alt="Maximum Logo" />
             </Link>
-            {['lg', 'md'].includes(variant) && (
-              <ul className={styles.navList}>
-                {[
-                  internalNavigations,
-                  variant === 'lg' ? externalNavigations : [],
-                ]
-                  .flat()
-                  .map((nav) => (
-                    <li key={nav.href} className={styles.navItem}>
-                      {nav.active ? (
-                        <span
-                          className={clsx(
-                            styles.navText,
-                            styles.currentNavText,
-                          )}
-                        >
-                          {nav.name}
-                        </span>
-                      ) : (
-                        <Link
-                          to={nav.href}
-                          href={nav.href}
-                          className={clsx(
-                            styles.navText,
-                            styles.notCurrentNavText,
-                          )}
-                        >
-                          {nav.name}
-                          {nav.external && (
-                            <ArrowUpRight size={16} strokeWidth={2} />
-                          )}
-                        </Link>
+            <ul className={styles.navList}>
+              {navigations.map((nav) => (
+                <li key={nav.href} className={styles.navItem}>
+                  {nav.active ? (
+                    <span
+                      className={clsx(styles.navText, styles.currentNavText)}
+                    >
+                      {nav.name}
+                    </span>
+                  ) : (
+                    <Link
+                      to={nav.href}
+                      href={nav.href}
+                      className={clsx(styles.navText, styles.notCurrentNavText)}
+                    >
+                      {nav.name}
+                      {nav.external && (
+                        <ArrowUpRight size={16} strokeWidth={2} />
                       )}
-                    </li>
-                  ))}
-              </ul>
-            )}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
           </nav>
           <div className={styles.actionArea}>{children}</div>
         </div>
@@ -143,7 +122,7 @@ export const Header = ({
             <div className={styles.dropdownActions}>
               {dropdownChildren}
               <Button
-                onClick={onClose}
+                onClick={onDropdownClose}
                 type="button"
                 variant="tertiary"
                 leftIcon={<X size={20} strokeWidth={2} />}
@@ -157,7 +136,7 @@ export const Header = ({
       {dropdownOpen && (
         <div
           className={styles.dropdownBackdrop}
-          onClick={onClose}
+          onClick={onDropdownClose}
           role="presentation"
         />
       )}

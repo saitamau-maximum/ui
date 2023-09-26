@@ -1,44 +1,20 @@
 import { Menu, User } from 'react-feather';
 
-import { HStack } from '../__stories__/h-stack';
-import { VStack } from '../__stories__/v-stack';
+import { Container } from '../__stories__/containter';
 import { Button } from '../button';
 
-import { Header, HeaderProps } from './Header';
+import { Header } from './Header';
 
 import type { Meta } from '@storybook/react';
 
 const meta: Meta<typeof Header> = {
   component: Header,
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export default meta;
-
-const LargeHeaders = (args: HeaderProps) => {
-  return (
-    <VStack align="stretch">
-      <VStack theme="light" noPadding height="50vh">
-        <Header {...args} />
-      </VStack>
-      <VStack theme="dark" noPadding height="50vh">
-        <Header {...args} />
-      </VStack>
-    </VStack>
-  );
-};
-
-const SmallHeaders = (args: HeaderProps) => {
-  return (
-    <HStack align="stretch">
-      <VStack theme="light" noPadding height="80vh" width="390px">
-        <Header {...args} />
-      </VStack>
-      <VStack theme="dark" noPadding height="80vh" width="390px">
-        <Header {...args} />
-      </VStack>
-    </HStack>
-  );
-};
 
 const NAVIGATIONS = [
   {
@@ -81,28 +57,32 @@ const NAVIGATIONS = [
   },
 ];
 
-export const VariantLg = () => (
-  <LargeHeaders navigations={NAVIGATIONS} variant="lg">
-    <Button leftIcon={<User />} variant="tertiary" />
-  </LargeHeaders>
+export const Light = () => (
+  <Container theme="light">
+    <Header navigations={NAVIGATIONS} />
+  </Container>
 );
 
-export const VariantMd = () => (
-  <LargeHeaders navigations={NAVIGATIONS} variant="md">
-    <Button leftIcon={<User />} variant="tertiary" />
-  </LargeHeaders>
+export const Dark = () => (
+  <Container theme="dark">
+    <Header navigations={NAVIGATIONS} />
+  </Container>
 );
 
-export const VariantSm = () => (
-  <SmallHeaders navigations={NAVIGATIONS} variant="sm">
-    <Button leftIcon={<User />} variant="tertiary" />
-    <Button leftIcon={<Menu />} variant="tertiary" />
-  </SmallHeaders>
+export const DropdownOpenLight = () => (
+  <Container theme="light">
+    <Header navigations={NAVIGATIONS} dropdownOpen>
+      <Button leftIcon={<User />} variant="tertiary" />
+      <Button leftIcon={<Menu />} variant="tertiary" />
+    </Header>
+  </Container>
 );
 
-export const DropdownOpen = () => (
-  <SmallHeaders navigations={NAVIGATIONS} variant="sm" dropdownOpen>
-    <Button leftIcon={<User />} variant="tertiary" />
-    <Button leftIcon={<Menu />} variant="tertiary" />
-  </SmallHeaders>
+export const DropdownOpenDark = () => (
+  <Container theme="dark">
+    <Header navigations={NAVIGATIONS} dropdownOpen>
+      <Button leftIcon={<User />} variant="tertiary" />
+      <Button leftIcon={<Menu />} variant="tertiary" />
+    </Header>
+  </Container>
 );

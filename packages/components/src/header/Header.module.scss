@@ -8,12 +8,13 @@
   );
 }
 
-.sm,
-:root:has(.sm) {
-  --header-inner-vertical-padding: 0rem;
-  --header-side-padding: 1rem;
-  --header-logo-height: 3rem;
-  --header-action-area-gap: 0.5rem;
+@media (max-width: 768px) {
+  :root {
+    --header-inner-vertical-padding: 0rem;
+    --header-side-padding: 1rem;
+    --header-logo-height: 3rem;
+    --header-action-area-gap: 0.5rem;
+  }
 }
 
 .header {
@@ -96,12 +97,19 @@
   gap: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .navList {
+    display: none;
+  }
+}
+
 $nav-text-padding-x: 1rem;
 
 .navText {
   font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem $nav-text-padding-x;
+  white-space: nowrap;
 
   transition: color 0.2s ease-in-out;
 
