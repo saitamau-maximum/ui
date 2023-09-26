@@ -123,6 +123,7 @@ export const Header = ({
               {dropdownChildren}
               <Button
                 onClick={onDropdownClose}
+                className={styles.dropdownCloseButton}
                 type="button"
                 variant="tertiary"
                 leftIcon={<X size={20} strokeWidth={2} />}
