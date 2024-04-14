@@ -59,19 +59,19 @@ const NAVIGATIONS = [
 
 export const Light = () => (
   <Container theme="light">
-    <Header navigations={NAVIGATIONS} />
+    <Header navigations={NAVIGATIONS} iconSrc="/logo.svg" />
   </Container>
 );
 
 export const Dark = () => (
   <Container theme="dark">
-    <Header navigations={NAVIGATIONS} />
+    <Header navigations={NAVIGATIONS} iconSrc="/logo.svg" />
   </Container>
 );
 
 export const DropdownOpenLight = () => (
   <Container theme="light">
-    <Header navigations={NAVIGATIONS} dropdownOpen>
+    <Header navigations={NAVIGATIONS} iconSrc="/logo.svg" dropdownOpen>
       <Button leftIcon={<User />} variant="tertiary" />
       <Button leftIcon={<Menu />} variant="tertiary" />
     </Header>
@@ -80,7 +80,7 @@ export const DropdownOpenLight = () => (
 
 export const DropdownOpenDark = () => (
   <Container theme="dark">
-    <Header navigations={NAVIGATIONS} dropdownOpen>
+    <Header navigations={NAVIGATIONS} iconSrc="/logo.svg" dropdownOpen>
       <Button leftIcon={<User />} variant="tertiary" />
       <Button leftIcon={<Menu />} variant="tertiary" />
     </Header>

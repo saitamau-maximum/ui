@@ -14,6 +14,7 @@ const config = {
   docs: {
     autodocs: 'tag',
   },
+  staticDirs: ['../public'],
   core: {
     builder: '@storybook/builder-vite',
   },

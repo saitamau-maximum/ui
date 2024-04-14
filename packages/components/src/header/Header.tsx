@@ -4,7 +4,6 @@ import { ArrowUpRight, X } from 'react-feather';
 import { Button } from '../button';
 
 import styles from './Header.module.scss';
-import logo from './logo.svg';
 
 type NavigationItem = {
   name: string;
@@ -31,6 +30,7 @@ export interface HeaderProps {
   navigations: NavigationItem[];
   children?: React.ReactNode;
   link?: LinkComponent;
+  iconSrc: string;
   dropdownOpen?: boolean;
   dropdownChildren?: React.ReactNode;
   onDropdownClose?: () => void;
@@ -40,6 +40,7 @@ export const Header = ({
   navigations,
   children,
   link,
+  iconSrc,
   dropdownOpen,
   dropdownChildren,
   onDropdownClose,
@@ -54,7 +55,7 @@ export const Header = ({
         <div className={styles.headerInner}>
           <nav className={styles.nav}>
             <Link to="/" href="/" className={styles.logoLink}>
-              <img className={styles.logo} src={logo} alt="Maximum Logo" />
+              <img className={styles.logo} src={iconSrc} alt="Maximum Logo" />
             </Link>
             <ul className={styles.navList}>
               {navigations.map((nav) => (
