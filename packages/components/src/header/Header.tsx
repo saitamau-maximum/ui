@@ -95,6 +95,7 @@ export const Header = ({
                         to={nav.href}
                         href={nav.href}
                         className={styles.dropdownLinkText}
+                        onClick={onDropdownClose}
                       >
                         {nav.name}
                       </Link>
@@ -110,6 +111,7 @@ export const Header = ({
                         to={nav.href}
                         href={nav.href}
                         className={styles.dropdownLinkText}
+                        target="_blank"
                       >
                         {nav.name}
                         <ArrowUpRight size={16} strokeWidth={2} />
