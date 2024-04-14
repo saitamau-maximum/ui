@@ -6,7 +6,8 @@
       "outputs": ["dist/**"]
     },
     "dev:storybook": {
-      "dependsOn": ["^dev:storybook"]
+      "dependsOn": ["^dev:storybook"],
+      "cache": false
     }
   }
 }
